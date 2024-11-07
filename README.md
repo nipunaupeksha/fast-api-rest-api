@@ -11,3 +11,10 @@ This API contains the following endpoints.
 - POST /auth/sign-in
 - POST /auth/sign-up
 - POST /auth/sign-out
+
+To use the local development
+
+- Install conda and create a new environment
+- Use poetry to add dependencies
+- Change .env file's `DATABASE_HOST` to `db`
+- Start the service with `docker-compose up --build` to start the PostgreSQL and the FastAPI
