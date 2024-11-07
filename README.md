@@ -12,7 +12,7 @@ This API contains the following endpoints.
 - POST /auth/sign-up
 - POST /auth/sign-out
 
-To use the local development
+To use the local development, follow the below instructions.
 
 - Install conda and create a new environment
 - Use poetry to add dependencies
