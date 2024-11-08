@@ -3,7 +3,6 @@ from unittest.mock import patch, MagicMock
 from fastapi.testclient import TestClient
 from main import app
 from uuid import uuid4
-from schemas.user import UserCreate, UserUpdate, UserPasswordUpdate
 from models.user import User
 from api.deps import get_db, get_current_user, get_current_admin_user
 from sqlalchemy.orm import Session
