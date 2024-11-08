@@ -23,3 +23,5 @@ To use the local development, follow the below instructions.
 - Use poetry to add dependencies
 - Change .env file's `DATABASE_HOST` to `db`
 - Start the service with `docker-compose up --build` to start the PostgreSQL and the FastAPI
+
+You can find the OpenAPI definition at, `https://fast-api-rest-api-76100969075.us-central1.run.app/docs`.
