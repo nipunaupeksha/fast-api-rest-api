@@ -41,7 +41,6 @@ def get_users_endpoint(
         username=username,
     )
     itemsPerPage = limit if limit < len(users) else len(users)
-    print(itemsPerPage, users)
     return PaginatedUserReponse(
         totalResults=total, itemsPerPage=itemsPerPage, users=users
     )

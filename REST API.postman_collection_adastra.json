@@ -1,0 +1,589 @@
+{
+	"info": {
+		"_postman_id": "ad9ae68a-4960-4e8c-8879-faa104c6a6f8",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32637434"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "POST auth/sign-up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"sohaniwewelwala\",\n    \"password\":\"123456789\",\n    \"first_name\":\"Sohani\",\n    \"last_name\":\"Wewelwala\",\n    \"email\":\"sohaniwewelwala@gmail.com\",\n    \"is_admin\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST auth/sign-in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/sign-in",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST auth/sign-out",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "refreshTokenUrl",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid user_management_global user_management_self user_management_groups user_management_change user_management_read shop_approver:access",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{my_idp_pw}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{my_idp_username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{my_client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{my_client_id}}",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "{{auth_url}}",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/sign-out",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{uuid}",
+					"item": [
+						{
+							"name": "GET /users/{uuid}",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "refreshTokenUrl",
+											"value": "{{access_token_url}}",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "openid user_management_global user_management_self user_management_groups user_management_change user_management_read shop_approver:access",
+											"type": "string"
+										},
+										{
+											"key": "tokenName",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{my_idp_pw}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{my_idp_username}}",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "{{my_client_secret}}",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "{{access_token_url}}",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "password_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "{{my_client_id}}",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "{{auth_url}}",
+											"type": "string"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "{{access_token_url}}",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:uuid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "b8d36f7f-7b1d-40b7-9642-18be34a3f1c8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH /users/{uuid}",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3MzA5ODc1NTZ9.s7ZnR8KzutJJjGeFgAFRF8_zuG3rPeOG3XxokYNf0Ac",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\":\"Maneesha1\",\n    \"last_name\":\"Indrachapa1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:uuid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "cf6f9669-0685-49c2-a6a3-d465a7eb7149"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /users/{uuid}",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3MzA5ODc1NTZ9.s7ZnR8KzutJJjGeFgAFRF8_zuG3rPeOG3XxokYNf0Ac",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\":\"Maneesha1\",\n    \"last_name\":\"Indrachapa1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:uuid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "cf6f9669-0685-49c2-a6a3-d465a7eb7149"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "password",
+					"item": [
+						{
+							"name": "{uuid}",
+							"item": [
+								{
+									"name": "PATCH /users/password/{uuid}",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuaXB1bmEudXBla3NoYUBnbWFpbC5jb20iLCJleHAiOjE3MzA5ODg2OTB9.NoE2kIkYHUNjbYETvnEjjlDk8PhWshs-EcRk8szwTOI",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"old_password\":\"1234567890\",\n    \"new_password\":\"1234567890\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/v1/users/password/:uuid",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"password",
+												":uuid"
+											],
+											"variable": [
+												{
+													"key": "uuid",
+													"value": "b8d36f7f-7b1d-40b7-9642-18be34a3f1c8"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET /users",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "refreshTokenUrl",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid user_management_global user_management_self user_management_groups user_management_change user_management_read shop_approver:access",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{my_idp_pw}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{my_idp_username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{my_client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{my_client_id}}",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "{{auth_url}}",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "{{access_token_url}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "isAdmin",
+									"value": "False",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Nipuna",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "Upeksha",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "nipuna.upeksha@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "nipunaupeksha",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3MzA5ODYxOTV9.LQOmAYulWoqebKO-ISB6M4t6_kNhYrxws_V-wupctZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"maneeshaindrachapa\",\n    \"password\":\"123456789\",\n    \"first_name\":\"Maneesha\",\n    \"last_name\":\"Indrachapa\",\n    \"email\":\"maneeshaindrachapa@gmail.com\",\n    \"is_admin\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
